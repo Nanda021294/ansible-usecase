@@ -23,15 +23,5 @@ ansible-playbook -i hosts -e pem_file=~/.ssh/your.pem -e key_name=your_keyname p
     * Add MongoDB Repository 
     * Install MongoDb Server
     * Start Mongodb Server
-
-### Example Playbook
-Minimal playbook for deploying spring boot application
-```
-     - hosts: all
-       vars:
-         springboot_application_name: spring-boot-sample
-         springboot_src: tests/spring-boot-sample.jar
-       roles:
-        - role: ansible-springboot
-```        
+      
 In order to run this playbook, the path of the ssh private key file for the key_name has to be specified in the command line under the var name of pem_file. The correct name for the keypair should be specified for key_name. It is also assumed that ~/.aws/credentials is set up with the access_key and secret_key for either the default profile or a specific profile. Further more, it is also assuemd that the ssh key pair has been set up on the AWS region.
